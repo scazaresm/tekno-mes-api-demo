@@ -1,7 +1,7 @@
-using PlcDemoBackend.Endpoints.Tags.Read;
-using PlcDemoBackend.Services.Plc;
-using PlcDemoBackend.Services.Plc.ControlLogix;
-using TeknoPlcDemo.Api.Endpoints.Tags.Read;
+using TeknoMES.Api.Endpoints.Tags.Read;
+using TeknoMES.Api.Endpoints.Tags.Write;
+using TeknoMES.Api.Services.Plc;
+using TeknoMES.Api.Services.Plc.ControlLogix;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,5 +13,6 @@ app.MapGet("/", () => "Tekno MES API.");
 
 app.MapPost("/tags/read/string", ReadTagString.HandleAsync);
 app.MapPost("/tags/read/bool", ReadTagBool.HandleAsync);
+app.MapPost("/tags/write/string", WriteTagString.HandleAsync);
 
 app.Run();

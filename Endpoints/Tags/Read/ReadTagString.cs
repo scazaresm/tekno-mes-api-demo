@@ -1,7 +1,7 @@
-﻿using PlcDemoBackend.Requests;
-using PlcDemoBackend.Services.Plc;
+﻿using TeknoMES.Api.Requests;
+using TeknoMES.Api.Services.Plc;
 
-namespace PlcDemoBackend.Endpoints.Tags.Read;
+namespace TeknoMES.Api.Endpoints.Tags.Read;
 
 public static class ReadTagString
 {
@@ -14,10 +14,10 @@ public static class ReadTagString
 
             var resultJson = new
             {
-                Gateway = request.Gateway,
-                Path = request.Path,
-                TagName = request.TagName,
-                Value = value
+                request.Gateway,
+                request.Path,
+                request.TagName,
+                value
             };
 
             return Results.Json(resultJson);

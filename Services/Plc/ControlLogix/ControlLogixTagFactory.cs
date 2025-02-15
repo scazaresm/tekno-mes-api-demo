@@ -1,8 +1,8 @@
 ﻿using libplctag;
 using libplctag.DataTypes.Simple;
-using PlcDemoBackend.Services.Exceptions;
+using TeknoMES.Api.Services.Exceptions;
 
-namespace PlcDemoBackend.Services.Plc.ControlLogix;
+namespace TeknoMES.Api.Services.Plc.ControlLogix;
 
 public class ControlLogixTagFactory
 {

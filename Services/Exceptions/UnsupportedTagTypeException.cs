@@ -1,5 +1,4 @@
-﻿
-namespace PlcDemoBackend.Services.Exceptions;
+﻿namespace TeknoMES.Api.Services.Exceptions;
 
 public class UnsupportedTagTypeException : Exception
 {
