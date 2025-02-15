@@ -1,6 +1,6 @@
 # Tekno MES API Demo
 
-This demo API is meant to demonstrate how to communicate with an Allen-Bradley ControlLogix PLC leveraging the [libplctag.NET](https://github.com/libplctag/libplctag.NET) library.
+This demo API is meant to demonstrate how to communicate with an Allen-Bradley ControlLogix PLC leveraging the [libplctag.NET](https://github.com/libplctag/libplctag.NET) library. It provides two demo endpoints to read string and bool tag types, and it could be easily extended to add support for more data types.
 
 ## How to test the API?
 
