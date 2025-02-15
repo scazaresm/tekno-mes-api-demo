@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "PjBJ5SP1nhU=",
+  "success": true,
+  "projectFilePath": "C:\\Repos\\PlcDemoBackend\\PlcDemoBackend\\TeknoMES.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sergio Cazares\\.nuget\\packages\\libplctag\\1.5.2\\libplctag.1.5.2.nupkg.sha512",
+    "C:\\Users\\Sergio Cazares\\.nuget\\packages\\libplctag.nativeimport\\1.0.41\\libplctag.nativeimport.1.0.41.nupkg.sha512"
+  ],
+  "logs": []
+}

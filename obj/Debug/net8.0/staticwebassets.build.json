@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Ee9OST+o4/VMbdmemZTglvZOUXfOl6adMEIkGaHH6VI=",
+  "Source": "TeknoPlcDemo.Api",
+  "BasePath": "_content/TeknoPlcDemo.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
