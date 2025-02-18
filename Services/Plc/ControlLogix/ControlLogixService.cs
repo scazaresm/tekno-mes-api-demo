@@ -1,10 +1,10 @@
 ﻿namespace TeknoMES.Api.Services.Plc.ControlLogix;
 
-public class ControlLogixService : IPlcService
+public class ControlLogixService(IPlcTagFactory tagFactory) : IPlcService
 {
     public async Task<T?> ReadTagAsync<T>(string gateway, string path, string tagName)
     {
-        var tag = ControlLogixTagFactory.CreateTag(typeof(T), gateway, path, tagName);
+        using var tag = tagFactory.Create(typeof(T), gateway, path, tagName);
 
         var value = await tag.ReadAsync();
 
@@ -13,7 +13,7 @@ public class ControlLogixService : IPlcService
 
     public async Task WriteTagAsync<T>(string gateway, string path, string tagName, object value)
     {
-        var tag = ControlLogixTagFactory.CreateTag(typeof(T), gateway, path, tagName);
+        using var tag = tagFactory.Create(typeof(T), gateway, path, tagName);
 
         tag.Value = value;
         await tag.WriteAsync();
