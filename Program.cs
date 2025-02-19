@@ -1,11 +1,19 @@
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.EntityFrameworkCore;
 using System.Net;
 using TeknoMES.Api.Endpoints.Tags.Read;
 using TeknoMES.Api.Endpoints.Tags.Write;
+using TeknoMES.Api.Infrastructure.Database;
 using TeknoMES.Api.Services.Plc;
 using TeknoMES.Api.Services.Plc.ControlLogix;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = "Host=localhost;Port=5432;Database=tekno;Username=myuser;Password=mypassword";
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(connectionString));
+
 
 builder.WebHost.ConfigureKestrel(options =>
 {
@@ -66,6 +74,19 @@ app.MapPost("/tags/dint/monitor-stop", (StopMonitoringRequest request, ITagMonit
 {
     tagMonitoringService.StopMonitoring(request.Gateway, request.Path, request.CommandTagName);
 });
+
+
+app.MapPost("/stations", async (AppDbContext db, Station station) =>
+{
+    db.Stations.Add(station);
+    await db.SaveChangesAsync();
+    return Results.Created($"/stations/{station.Id}", station);
+});
+
+
+app.MapGet("/stations", async (AppDbContext db) => await db.Stations.ToListAsync());
+
+
 
 app.Run();
 
